@@ -1,122 +1,249 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Rukul's Personal Site</title>
-  </head>
-  <body>
-    <table cellspacing="20">
-      <tr>
-        <td><img src="images\dp.png" alt="Rukul's Profile Picture" height="300px" width="300px"></td>
-        <td><h1>Rukul Pratap Singh</h1>
-          <p><em>Assistant System Engineer Trainee at </em><strong><a href="https://www.tcs.com/" target="_blank">Tata Consultancy Services Limited</a></strong></p>
-          <p>I am a Python and full-stack Web Developer. I ❤ sketching and painting.</p>
-        </td>
-      </tr>
-    </table>
-    <hr>
-    <h3>Education</h3>
-    <ul>
-      <li>Graduation in Electronics and Communications Engineering, Btech from <strong><a href="http://www.aiactr.ac.in/index.php/programmes/nsut-east-campus" target="_blank">NSUT East Campus (formerly AIACTR)</a></strong></li>
-      <li>Senior Secondary Education (12th) from <strong><a href="https://www.mapsvasundhara.edu.in/" target="_blank">Maharaja Agarsain Public School</a></strong> affiliated to <strong><a href="https://cbse.gov.in/" target="_blank">CBSE</a></strong></li>
-      <li>Secondary Education (10th) from <strong><a href="https://www.mapsvasundhara.edu.in/" target="_blank">Maharaja Agarsain Public School</a></strong> affiliated to <strong><a href="https://cbse.gov.in/" target="_blank">CBSE</a></strong></li>
-    </ul>
-    <hr>
-    <h3>Work Experience</h3>
-    <table cellspacing="10">
-      <thead>
-        <tr>
-          <th>Dates</th>
-          <th>Work</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Nov, 2020</td>
-          <td>ILP</td>
-        </tr>
-        <tr>
-          <td>Dec, 2020</td>
-          <td>Full-Stack Training</td>
-        </tr>
-        <tr>
-          <td>Jan, 2021</td>
-          <td>Project Training</td>
-        </tr>
-      </tbody>
-    </table>
-    <hr>
-    <h3>Skills</h3>
-    <table cellspacing="10">
-      <tr>
-        <td>
-          <table cellspacing="5">
-            <tr>
-              <td>HTML5</td>
-              <td>⭐⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>JS(ES6)</td>
-              <td>⭐⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>JSON</td>
-              <td>⭐⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>jQuery</td>
-              <td>⭐⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>CSS</td>
-              <td>⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>Bootstrap 4</td>
-              <td>⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>Node.js</td>
-              <td>⭐⭐⭐⭐</td>
-            </tr>
-          </table>
-        </td>
-        <td>
-          <table cellspacing="5">
-            <tr>
-              <td>Bash & Awk</td>
-              <td>⭐⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>Python</td>
-              <td>⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>SQL</td>
-              <td>⭐⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>TypeScript</td>
-              <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>C</td>
-              <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>C++</td>
-              <td>⭐⭐⭐</td>
-            </tr>
-            <tr>
-              <td>Kotlin</td>
-              <td>⭐⭐</td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-    </table>
-    <hr>
-    <a href="hobbies.html" target="_blank">My Hobbies</a>
-    <a href="contact-me.html" target="_blank">Contact Me</a>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Rukul Singh | Strategy & Digital Transformation</title>
+  <meta name="description" content="Rukul Singh – Strategy & Digital Transformation Consultant | MBA IIM Lucknow" />
+  <meta name="keywords" content="Product Management, Strategy Consultant, Digital Transformation, MBA IIM Lucknow">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom Font (Optional but professional) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html {
+    scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+  </style>
+</head>
+
+<body class="bg-white text-gray-900">
+
+    <!-- ================= NAVBAR ================= -->
+    <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b z-50">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+            <span class="font-semibold">Rukul Singh</span>
+
+            <div class="hidden md:flex gap-6 text-sm">
+            <a href="#home" class="hover:underline">Home</a>
+            <a href="#about" class="hover:underline">About</a>
+            <a href="#skills" class="hover:underline">Skills</a>
+            <a href="#experience" class="hover:underline">Experience</a>
+            <a href="#projects" class="hover:underline">Projects</a>
+            <a href="#contact" class="hover:underline">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="min-h-screen flex items-center justify-center px-6 pt-24">
+    <div class="text-center max-w-2xl">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">
+        Rukul Singh
+      </h1>
+      <p class="text-lg md:text-xl text-gray-600 mb-6">
+        Strategy & Digital Transformation Consultant
+      </p>
+      <p class="text-gray-500 mb-8">
+        MBA – IIM Lucknow | Consulting | Tech-enabled Business Strategy
+      </p>
+
+      <div class="flex justify-center gap-4">
+        <a href="assets/resume.pdf" target="_blank"
+           class="bg-black text-white px-6 py-3 rounded-md hover:bg-gray-800 transition">
+          Download Resume
+        </a>
+        <a href="#contact"
+           class="border border-black px-6 py-3 rounded-md hover:bg-black hover:text-white transition">
+          Contact Me
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="py-20 px-6 bg-gray-50 reveal opacity-0 translate-y-6 transition-all duration-700">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-6">About Me</h2>
+      <p class="text-gray-700 leading-relaxed">
+        I am a strategy and digital transformation professional with experience
+        delivering technology-enabled business solutions across consulting and
+        enterprise environments. With an MBA from IIM Lucknow and hands-on
+        experience in digital transformation, stakeholder management, and
+        analytics-driven decision-making, I help organizations translate
+        strategy into execution.
+      </p>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="py-20 px-6 reveal opacity-0 translate-y-6 transition-all duration-700">
+    <div class="max-w-5xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-10">Skills</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="border rounded-lg p-6">
+          <h3 class="font-semibold mb-2">Strategy & Consulting</h3>
+          <p class="text-gray-600">Business Strategy, Digital Strategy, M&A Support, Market Analysis</p>
+        </div>
+
+        <div class="border rounded-lg p-6">
+          <h3 class="font-semibold mb-2">Digital Transformation</h3>
+          <p class="text-gray-600">Process Redesign, Automation, CRM, Martech</p>
+        </div>
+
+        <div class="border rounded-lg p-6">
+          <h3 class="font-semibold mb-2">Technology & Analytics</h3>
+          <p class="text-gray-600">Data Analysis, ROI Modeling, Tools Evaluation</p>
+        </div>
+
+        <div class="border rounded-lg p-6">
+          <h3 class="font-semibold mb-2">Leadership & Stakeholders</h3>
+          <p class="text-gray-600">Cross-functional Leadership, Client Management, Execution Excellence</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE ================= -->
+  <section id="experience" class="py-20 px-6 bg-gray-50 reveal opacity-0 translate-y-6 transition-all duration-700">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold mb-10">Experience</h2>
+
+      <div class="space-y-6">
+        <div class="border-l-4 border-black pl-4">
+          <h3 class="font-semibold">Digital Transformation Consultant</h3>
+          <p class="text-gray-600 text-sm">PwC</p>
+          <p class="text-gray-700 mt-2">
+            Led analytics-driven initiatives, built ROI simulators, and supported
+            clients in evaluating and implementing digital platforms.
+          </p>
+        </div>
+
+        <div class="border-l-4 border-black pl-4">
+          <h3 class="font-semibold">Program / Brand Management</h3>
+          <p class="text-gray-600 text-sm">TCS</p>
+          <p class="text-gray-700 mt-2">
+            Coordinated with 40+ brands and 80+ stakeholders to drive automation,
+            product launches, and process improvements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+<section id="projects"
+  class="py-20 px-6 reveal opacity-0 translate-y-6 transition-all duration-700">
+
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-10">Projects</h2>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- Project Card -->
+      <div class="border rounded-lg p-6 hover:shadow-lg transition">
+        <h3 class="font-semibold mb-2">
+          ROI Simulator for Digital Platforms
+        </h3>
+        <p class="text-sm text-gray-500 mb-3">
+          Consulting | Analytics | Decision Support
+        </p>
+        <p class="text-gray-700 text-sm mb-4">
+          Built ROI simulators to help fintech clients evaluate performance,
+          optimize incentive budgets, and support go/no-go decisions for
+          digital platform investments.
+        </p>
+        <p class="text-sm text-gray-600">
+          <strong>Impact:</strong> Enabled faster, data-backed decisions and
+          improved investment confidence.
+        </p>
+      </div>
+
+      <!-- Project Card -->
+      <div class="border rounded-lg p-6 hover:shadow-lg transition">
+        <h3 class="font-semibold mb-2">
+          Multi-brand Digital Transformation Program
+        </h3>
+        <p class="text-sm text-gray-500 mb-3">
+          Program Management | Automation | CRM
+        </p>
+        <p class="text-gray-700 text-sm mb-4">
+          Led cross-functional coordination across 40+ brands to deploy
+          automation, CRM enhancements, and digital engagement initiatives.
+        </p>
+        <p class="text-sm text-gray-600">
+          <strong>Impact:</strong> Improved execution speed, consistency, and
+          stakeholder alignment.
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="py-20 px-6 reveal opacity-0 translate-y-6 transition-all duration-700">
+    <div class="max-w-3xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-6">Contact</h2>
+      <p class="text-gray-600 mb-6">
+        Interested in working together or discussing opportunities?
+      </p>
+
+      <div class="flex justify-center gap-6">
+        <a href="mailto:rukulsingh98@gmail.com" class="underline">Email</a>
+        <a href="https://www.linkedin.com/in/rukul-pratap-s-898398a7/" target="_blank" class="underline">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CHATBOT BUTTON ================= -->
+  <button id="chatToggle"
+    class="fixed bottom-6 right-6 bg-black text-white px-4 py-3 rounded-full shadow-lg hover:bg-gray-800">
+    Chat 💬
+  </button>
+
+  <!-- ================= CHATBOT WINDOW ================= -->
+  <div id="chatWindow"
+    class="hidden fixed bottom-20 right-6 w-80 bg-white border rounded-lg shadow-lg flex flex-col">
+
+    <div class="bg-black text-white p-3 rounded-t-lg">
+      Ask me about Rukul
+    </div>
+
+    <div id="chatMessages" class="p-3 h-64 overflow-y-auto text-sm space-y-2"></div>
+
+    <div class="flex border-t">
+      <input id="chatInput" type="text" placeholder="Ask about skills, experience..."
+        class="flex-1 p-2 text-sm outline-none" />
+      <button id="sendBtn" class="px-4 text-black font-semibold">Send</button>
+    </div>
+  </div>
+  <script>
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.remove("opacity-0", "translate-y-6");
+      }
+    });
+  }, { threshold: 0.1 });
+
+  document.querySelectorAll(".reveal").forEach(el => {
+    observer.observe(el);
+  });
+</script>
+
+  <script src="chatbot.js"></script>
+</body>
 </html>
+

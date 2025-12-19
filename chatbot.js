@@ -41,6 +41,15 @@ function getResponse(msg) {
   if (msg.includes("skills")) {
     return "My skills include business strategy, digital transformation, analytics, stakeholder management, and consulting.";
   }
+
+  if (msg.includes("project")) {
+    return "I have worked on product- and strategy-focused projects like ROI simulators for platform evaluation and large-scale digital transformation programs across multiple brands. You can scroll to the Projects section to see detailed case-style summaries.";
+  }
+
+  if (msg.includes("product manager") || msg.includes("pm")) {
+    return "I aspire to be a Product Manager because I enjoy solving user problems, defining success metrics, balancing trade-offs, and working cross-functionally to ship impactful solutions.";
+  }
+
   if (msg.includes("resume")) {
     return "You can download my resume using the 'Download Resume' button on the homepage.";
   }

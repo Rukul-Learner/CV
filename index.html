@@ -80,12 +80,12 @@
         <div class="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
             <!-- ===== LEFT: CAROUSEL CARD ===== -->
-            <div class="flex justify-center md:justify-start opacity-0 translate-x-[-20px]
+            <div class="flex flex-col items-center md:items-start opacity-0 translate-x-[-20px]
          transition-all duration-700 ease-out" id="heroCard">
-                <div class="w-full max-w-sm mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
+                <div class="w-full max-w-sm mx-auto rounded-2xl shadow-lg overflow-hidden bg-transparent">
 
                     <!-- Image Area -->
-                    <div class="relative bg-gray-100 aspect-square flex items-center justify-center">
+                    <div class="relative aspect-square flex items-center justify-center">
                         <div id="carousel" class="flex transition-transform duration-500 ease-in-out w-full h-full">
 
                             <!-- Image 1 -->
@@ -128,18 +128,23 @@
 
                         </div>
                     </div>
-
-                    <!-- Dots -->
-                    <div class="flex justify-center gap-2 py-3">
-                        <button class="dot w-2 h-2 bg-gray-800 rounded-full"></button>
-                        <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
-                        <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
-                        <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
-                        <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
-                        <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
                     </div>
+
+<!-- Dots -->
+                <div id="carouselDots" class="flex justify-center gap-2 mt-4 w-full max-w-sm mx-auto">
+                    <button class="dot w-2 h-2 bg-gray-800 rounded-full"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
                 </div>
+                     
+                   
+                
             </div>
+
+
 
             <!-- Right: Text Area (Mobile Card Look) -->
             <div class="text-center md:text-left opacity-0 translate-y-4 transition-all duration-700 ease-out delay-150"
@@ -380,10 +385,27 @@
             });
         });
 
-        setInterval(() => {
-            index = (index + 1) % totalSlides;
-            showSlide(index);
-        }, 4000);
+        let autoSlideInterval = null;
+        let userInteracted = false;
+
+        function startAutoSlide() {
+            if (autoSlideInterval) return;
+
+            autoSlideInterval = setInterval(() => {
+                if (!userInteracted) {
+                    index = (index + 1) % totalSlides;
+                    showSlide(index);
+                }
+            }, 4000);
+        }
+
+        function stopAutoSlide() {
+            userInteracted = true;
+            clearInterval(autoSlideInterval);
+            autoSlideInterval = null;
+        }
+
+        startAutoSlide();
     </script>
 
     <script>
@@ -406,10 +428,12 @@
             if (startX - endX > threshold) {
                 // swipe left
                 index = (index + 1) % totalSlides;
+                stopAutoSlide();
                 showSlide(index);
             } else if (endX - startX > threshold) {
                 // swipe right
                 index = (index - 1 + totalSlides) % totalSlides;
+                stopAutoSlide();
                 showSlide(index);
             }
         }
@@ -424,6 +448,15 @@
                 .classList.remove("opacity-0", "translate-y-4");
         });
     </script>
+
+    <script>
+        const dotsContainer = document.getElementById("carouselDots");
+
+        if (totalSlides <= 1) {
+            dotsContainer.style.display = "none";
+        }
+    </script>
+
 
 
 </body>

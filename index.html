@@ -33,7 +33,19 @@
         body {
             font-family: 'Inter', sans-serif;
         }
+
+        .carousel-slide {
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.7s ease;
+        }
+
+        .carousel-slide.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
     </style>
+
 </head>
 
 <body class="bg-white text-gray-900">
@@ -86,62 +98,60 @@
 
                     <!-- Image Area -->
                     <div class="relative aspect-square flex items-center justify-center">
-                        <div id="carousel" class="flex transition-transform duration-500 ease-in-out w-full h-full">
+                        <div id="carousel" class="relative w-full h-full overflow-hidden" role="region"
+  aria-label="Image carousel">
 
                             <!-- Image 1 -->
-                            <div class="w-full h-full flex-shrink-0 flex items-center justify-center">
-                                <img src="assets/images/IIML Convocation.jpeg"
-                                    class="max-h-full max-w-full object-contain" alt="IIML Convocation"
-                                    draggable="false">
-                            </div>
+                            <img src="assets/images/IIML Convocation.jpeg"
+                                class="carousel-slide is-active absolute inset-0 h-full w-full object-contain"
+                                alt="IIML Convocation" draggable="false">
 
                             <!-- Image 2 -->
-                            <div class="w-full h-full flex-shrink-0 flex items-center justify-center">
-                                <img src="assets/images/excelia.jpg" class="max-h-full max-w-full object-contain"
-                                    alt="Excelia Business School" draggable="false">
-                            </div>
+                            <img src="assets/images/excelia.jpg"
+                                class="carousel-slide absolute inset-0 h-full w-full object-contain"
+                                alt="Excelia Business School" draggable="false">
+
 
                             <!-- Image 3 -->
-                            <div class="w-full h-full flex-shrink-0 flex items-center justify-center">
-                                <img src="assets/images/PwC India.jpeg" class="max-h-full max-w-full object-contain"
-                                    alt="PwC India" draggable="false">
-                            </div>
+                            <img src="assets/images/PwC India.jpeg"
+                                class="carousel-slide absolute inset-0 h-full w-full object-contain" alt="PwC India"
+                                draggable="false">
+
 
                             <!-- Image 4 -->
-                            <div class="w-full h-full flex-shrink-0 flex items-center justify-center">
-                                <img src="assets/images/PwC DS Team Pune.jpeg"
-                                    class="max-h-full max-w-full object-contain" alt="PwC India DS Pune"
-                                    draggable="false">
-                            </div>
+                            <img src="assets/images/PwC DS Team Pune.jpeg"
+                                class="carousel-slide absolute inset-0 h-full w-full object-contain"
+                                alt="PwC India DS Pune" draggable="false">
+
 
                             <!-- Image 5 -->
-                            <div class="w-full h-full flex-shrink-0 flex items-center justify-center">
-                                <img src="assets/images/LnT.jpeg" class="max-h-full max-w-full object-contain"
-                                    alt="Larsen & Toubro SuFin" draggable="false">
-                            </div>
+                            <img src="assets/images/LnT.jpeg"
+                                class="carousel-slide absolute inset-0 h-full w-full object-contain"
+                                alt="Larsen & Toubro SuFin" draggable="false">
+
 
                             <!-- Image 6 -->
-                            <div class="w-full h-full flex-shrink-0 flex items-center justify-center">
-                                <img src="assets/images/NSUT East.jpeg" class="max-h-full max-w-full object-contain"
-                                    alt="NSUT East" draggable="false">
-                            </div>
+                            <img src="assets/images/NSUT East.jpeg"
+                                class="carousel-slide absolute inset-0 h-full w-full object-contain" alt="NSUT East"
+                                draggable="false">
+
 
                         </div>
                     </div>
-                    </div>
-
-<!-- Dots -->
-                <div id="carouselDots" class="flex justify-center gap-2 mt-4 w-full max-w-sm mx-auto">
-                    <button class="dot w-2 h-2 bg-gray-800 rounded-full"></button>
-                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
-                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
-                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
-                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
-                    <button class="dot w-2 h-2 bg-gray-300 rounded-full"></button>
                 </div>
-                     
-                   
-                
+
+                <!-- Dots -->
+                <div id="carouselDots" class="flex justify-center gap-2 mt-4 w-full max-w-sm mx-auto">
+                    <button class="dot w-2 h-2 bg-gray-800 rounded-full" aria-label="Go to slide 1"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full" aria-label="Go to slide 2"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full" aria-label="Go to slide 3"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full" aria-label="Go to slide 4"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full" aria-label="Go to slide 5"></button>
+                    <button class="dot w-2 h-2 bg-gray-300 rounded-full" aria-label="Go to slide 6"></button>
+                </div>
+
+
+
             </div>
 
 
@@ -365,13 +375,24 @@
 
     <!-- Carousel Script -->
     <script>
-        const carousel = document.getElementById("carousel");
+        const slides = document.querySelectorAll(".carousel-slide");
         const dots = document.querySelectorAll(".dot");
+        const carouselWrapper = document.getElementById("carousel");
+
         let index = 0;
-        const totalSlides = dots.length;
+        let autoSlideInterval = null;
+        let userPaused = false;
+
+        const totalSlides = slides.length;
 
         function showSlide(i) {
-            carousel.style.transform = `translateX(-${i * 100}%)`;
+
+            slides.forEach((slide, idx) => {
+                slide.classList.toggle("is-active", idx === i);
+                //Using Opacity toggling will lead to FOUC
+                //slide.classList.toggle("opacity-100", idx === i);
+                //slide.classList.toggle("opacity-0", idx !== i);
+            });
             dots.forEach((dot, idx) => {
                 dot.classList.toggle("bg-gray-800", idx === i);
                 dot.classList.toggle("bg-gray-300", idx !== i);
@@ -381,18 +402,17 @@
         dots.forEach((dot, i) => {
             dot.addEventListener("click", () => {
                 index = i;
+                userPaused = true;
+                stopAutoSlide();
                 showSlide(index);
             });
         });
 
-        let autoSlideInterval = null;
-        let userInteracted = false;
-
         function startAutoSlide() {
-            if (autoSlideInterval) return;
+            if (autoSlideInterval || totalSlides <= 1) return;
 
             autoSlideInterval = setInterval(() => {
-                if (!userInteracted) {
+                if (!userPaused) {
                     index = (index + 1) % totalSlides;
                     showSlide(index);
                 }
@@ -400,25 +420,32 @@
         }
 
         function stopAutoSlide() {
-            userInteracted = true;
             clearInterval(autoSlideInterval);
             autoSlideInterval = null;
         }
 
-        startAutoSlide();
-    </script>
+        /* Pause on hover (desktop only) */
+        carouselWrapper.addEventListener("mouseenter", () => {
+            stopAutoSlide();
+        });
 
-    <script>
+        carouselWrapper.addEventListener("mouseleave", () => {
+            if (!userPaused) startAutoSlide();
+        });
+
+        /* Hide dots if single slide */
+        if (totalSlides <= 1) {
+            document.getElementById("carouselDots").style.display = "none";
+        }
+
         let startX = 0;
         let endX = 0;
 
-        const carouselContainer = document.getElementById("carousel");
-
-        carouselContainer.addEventListener("touchstart", (e) => {
+        carouselWrapper.addEventListener("touchstart", (e) => {
             startX = e.touches[0].clientX;
         });
 
-        carouselContainer.addEventListener("touchend", (e) => {
+        carouselWrapper.addEventListener("touchend", (e) => {
             endX = e.changedTouches[0].clientX;
             handleSwipe();
         });
@@ -437,6 +464,42 @@
                 showSlide(index);
             }
         }
+
+        function goToNextSlide() {
+            index = (index + 1) % totalSlides;
+            userPaused = true;
+            stopAutoSlide();
+            showSlide(index);
+        }
+
+        function goToPrevSlide() {
+            index = (index - 1 + totalSlides) % totalSlides;
+            userPaused = true;
+            stopAutoSlide();
+            showSlide(index);
+        }
+
+        function isCarouselInView() {
+    const rect = carouselWrapper.getBoundingClientRect();
+    return rect.top < window.innerHeight && rect.bottom > 0;
+  }
+
+        document.addEventListener("keydown", (e) => {
+            if (!isCarouselInView()) return;
+            // Ignore if user is typing in input/textarea
+            const tag = document.activeElement.tagName.toLowerCase();
+            if (tag === "input" || tag === "textarea") return;
+
+            if (e.key === "ArrowRight") {
+                goToNextSlide();
+            }
+
+            if (e.key === "ArrowLeft") {
+                goToPrevSlide();
+            }
+        });
+
+        startAutoSlide();
     </script>
 
     <script>
@@ -447,14 +510,6 @@
             document.getElementById("heroText")
                 .classList.remove("opacity-0", "translate-y-4");
         });
-    </script>
-
-    <script>
-        const dotsContainer = document.getElementById("carouselDots");
-
-        if (totalSlides <= 1) {
-            dotsContainer.style.display = "none";
-        }
     </script>
 
 

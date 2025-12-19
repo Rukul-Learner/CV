@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Rukul Singh | Strategy & Digital Transformation</title>
-  <meta name="description" content="Rukul Singh – Strategy & Digital Transformation Consultant | MBA IIM Lucknow" />
-  <meta name="keywords" content="Product Management, Strategy Consultant, Digital Transformation, MBA IIM Lucknow">
-
+  <title>Aspiring Product Manager | Rukul Singh | Strategy & Digital Transformation</title>
+  <meta name="description" content="Rukul Singh – Aspiring Product Manager | Strategy & Digital Transformation Consultant | Software Engineer | MBA IIM Lucknow | BTech NSUT" />
+  <meta name="keywords" content="Product Manager, Associate Product Manager, Product Management, Strategy Consultant, Digital Transformation, Business Analytics, Product Strategy, Stakeholder Management, Roadmapping, MBA IIM Lucknow">
+  <meta name="author" content="Rukul Singh" />
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
 
@@ -28,20 +28,40 @@
 <body class="bg-white text-gray-900">
 
     <!-- ================= NAVBAR ================= -->
-    <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-            <span class="font-semibold">Rukul Singh</span>
+<nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b z-50">
+  <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
-            <div class="hidden md:flex gap-6 text-sm">
-            <a href="#home" class="hover:underline">Home</a>
-            <a href="#about" class="hover:underline">About</a>
-            <a href="#skills" class="hover:underline">Skills</a>
-            <a href="#experience" class="hover:underline">Experience</a>
-            <a href="#projects" class="hover:underline">Projects</a>
-            <a href="#contact" class="hover:underline">Contact</a>
-            </div>
-        </div>
-    </nav>
+    <span class="font-semibold">Rukul Singh</span>
+
+    <!-- Desktop Nav -->
+    <div class="hidden md:flex gap-6 text-sm">
+      <a href="#home" class="hover:underline">Home</a>
+      <a href="#about" class="hover:underline">About</a>
+      <a href="#skills" class="hover:underline">Skills</a>
+      <a href="#experience" class="hover:underline">Experience</a>
+      <a href="#projects" class="hover:underline">Projects</a>
+      <a href="#contact" class="hover:underline">Contact</a>
+    </div>
+
+    <!-- Mobile Hamburger -->
+    <button id="menuBtn" class="md:hidden text-xl">
+      ☰
+    </button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+    <div class="flex flex-col px-6 py-4 space-y-4 text-sm">
+      <a href="#home" onclick="toggleMenu()">Home</a>
+      <a href="#about" onclick="toggleMenu()">About</a>
+      <a href="#skills" onclick="toggleMenu()">Skills</a>
+      <a href="#experience" onclick="toggleMenu()">Experience</a>
+      <a href="#projects" onclick="toggleMenu()">Projects</a>
+      <a href="#contact" onclick="toggleMenu()">Contact</a>
+    </div>
+  </div>
+</nav>
+
 
 
   <!-- ================= HERO ================= -->
@@ -243,7 +263,18 @@
   });
 </script>
 
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  function toggleMenu() {
+    mobileMenu.classList.toggle("hidden");
+  }
+
+  menuBtn.addEventListener("click", toggleMenu);
+</script>
+
+
   <script src="chatbot.js"></script>
 </body>
 </html>
-

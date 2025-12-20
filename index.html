@@ -52,18 +52,30 @@
 
     <!-- ================= NAVBAR ================= -->
     <nav class="fixed top-0 left-0 w-full bg-white/80 backdrop-blur border-b z-50">
-        <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
 
-            <span class="font-semibold">Rukul Singh</span>
+            <!-- LEFT: Name + Brand Logos -->
+             <div class="flex items-center gap-4">
+            <span class="text-3xl font-bold tracking-tight">Rukul Singh</span>
 
+            <!-- Brand Logos (Desktop only) -->
+      <div class="hidden md:flex items-center gap-3 opacity-70">
+        <a href="https://iiml.ac.in/" target="_blank"><img src="assets/logos/IIML.png" alt="IIM Lucknow" class="h-8 hover:opacity-100 transition"></a>
+        <a href="https://www.pwc.in/consulting/technology/digital-strategy.html" target="_blank"><img src="assets/logos/pwc.png" alt="PwC" class="h-5 hover:opacity-100 transition"></a>
+        <a href="https://www.nsut.ac.in/" target="_blank"><img src="assets/logos/NSUT.png" alt="NSUT" class="h-8 hover:opacity-100 transition"></a>
+        <a href="https://www.tcs.com/" target="_blank"><img src="assets/logos/tcs.png" alt="TCS" class="h-4 hover:opacity-100 transition"></a>
+      </div>
+    </div>
+
+            <!-- RIGHT: Navigation -->
             <!-- Desktop Nav -->
-            <div class="hidden md:flex gap-6 text-sm">
-                <a href="#home" class="hover:underline">Home</a>
-                <a href="#about" class="hover:underline">About</a>
-                <a href="#skills" class="hover:underline">Skills</a>
-                <a href="#experience" class="hover:underline">Experience</a>
-                <a href="#projects" class="hover:underline">Projects</a>
-                <a href="#contact" class="hover:underline">Contact</a>
+            <div class="hidden md:flex gap-8 text-base font-medium text-gray-700">
+                <a href="#home" class="hover:text-black transition">Home</a>
+                <a href="#about" class="hover:text-black transition">About</a>
+                <a href="#skills" class="hover:text-black transition">Skills</a>
+                <a href="#experience" class="hover:text-black transition">Experience</a>
+                <a href="#projects" class="hover:text-black transition">Projects</a>
+                <a href="#contact" class="hover:text-black transition">Contact</a>
             </div>
 
             <!-- Mobile Hamburger -->

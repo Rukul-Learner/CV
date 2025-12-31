@@ -67,6 +67,30 @@
             background: #000;
             border-radius: 2px;
         } */
+
+        /* Logos */
+        .card-logo {
+            width: 32px;
+            height: 32px;
+            object-fit: contain;
+            flex-shrink: 0;
+        }
+
+        /* Typography */
+        .card-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: #111827;
+            line-height: 1.25;
+        }
+
+        .card-subtitle {
+            font-size: 12px;
+            color: #6b7280;
+            /* gray-500 */
+            margin-top: 2px;
+            line-height: 1.3;
+        }
     </style>
 
 </head>
@@ -83,7 +107,7 @@
                 <a href="index.html"><span class="text-3xl font-bold tracking-tight">Rukul Singh</span></a>
 
                 <!-- Brand Logos (Desktop only) -->
-                <div class="hidden md:flex items-center gap-3 opacity-70">
+                <div class="hidden lg:flex items-center gap-3 opacity-70">
                     <a href="https://iiml.ac.in/" target="_blank"><img src="assets/logos/IIML.png" alt="IIM Lucknow"
                             class="h-8 hover:opacity-100 transition"></a>
                     <a href="https://www.pwc.in/consulting/technology/digital-strategy.html" target="_blank"><img
@@ -100,6 +124,7 @@
             <div id="desktopNav" class="hidden md:flex gap-8 text-base font-medium text-gray-700 relative">
                 <a href="#home" class="nav-link hover:text-black transition">Home</a>
                 <a href="#about" class="nav-link hover:text-black transition">About</a>
+                <a href="#journey" class="nav-link hover:text-black transition">Career</a>
                 <a href="#skills" class="nav-link hover:text-black transition">Skills</a>
                 <a href="#experience" class="nav-link hover:text-black transition">Experience</a>
                 <a href="#projects" class="nav-link hover:text-black transition">Projects</a>
@@ -120,6 +145,7 @@
             <div class="flex flex-col px-6 py-4 space-y-4 text-sm">
                 <a href="#home" class="mobile-link" onclick="handleMobileNav(this)">Home</a>
                 <a href="#about" class="mobile-link" onclick="handleMobileNav(this)">About</a>
+                <a href="#journey" class="mobile-link" onclick="handleMobileNav(this)">Career</a>
                 <a href="#skills" class="mobile-link" onclick="handleMobileNav(this)">Skills</a>
                 <a href="#experience" class="mobile-link" onclick="handleMobileNav(this)">Experience</a>
                 <a href="#projects" class="mobile-link" onclick="handleMobileNav(this)">Projects</a>
@@ -127,8 +153,6 @@
             </div>
         </div>
     </nav>
-
-
 
     <!-- ================= HERO ================= -->
     <section id="home" class="min-h-screen flex items-center px-6 pt-20 md:pt-28">
@@ -193,11 +217,7 @@
                     <button class="dot w-2 h-2 bg-gray-300 rounded-full" aria-label="Go to slide 6"></button>
                 </div>
 
-
-
             </div>
-
-
 
             <!-- Right: Text Area (Mobile Card Look) -->
             <div class="text-center md:text-left opacity-0 translate-y-4 transition-all duration-700 ease-out delay-150"
@@ -224,9 +244,7 @@
                 </div>
             </div>
 
-
         </div>
-
     </section>
 
     <!-- ================= ABOUT ================= -->
@@ -244,8 +262,328 @@
         </div>
     </section>
 
+    <!--Experimental career Wrapper-->
+    <section id="journey" class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl font-semibold text-center mb-16">
+                Career Snapshot
+            </h2>
+
+            <!-- Timeline Container -->
+            <div class="relative">
+
+                <!-- Center Line -->
+                <div class="absolute left-0 right-0 top-1/2 h-px bg-gray-300 hidden md:block"></div>
+
+                <!-- Desktop Rows -->
+                <div class="hidden md:grid grid-rows-2 gap-20">
+
+                    <!-- Experience Row -->
+                    <div class="relative flex justify-between items-end md:overflow-x-auto md:gap-6 md:pb-4 lg:overflow-visible lg:gap-0">
+                        <!-- cards go here -->
+                        <!-- <div
+                            class="bg-white border rounded-xl px-6 py-4 shadow-sm hover:shadow-md transition w-[260px]">
+                            <div class="flex items-center gap-3 mb-2">
+                                <img src="assets/logos/ascendion.png" class="h-6 w-auto" />
+                                <h3 class="font-semibold text-sm">AI Consultant</h3>
+                            </div>
+                            <p class="text-sm text-gray-600">Ascendion</p>
+                            <p class="text-xs text-gray-500 mt-1">Dec 2025 – Present</p>
+                        </div> -->
+                        <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px] shrink-0">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/pwc.png" class="h-8 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Consultant (Digital Transformation)</h3>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">PwC India · Strategy Associate</p>
+                                <p class="text-xs text-gray-400 mt-1">Jun - Nov 2025</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px] shrink-0">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/l&t.png" class="h-9 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Category Management <br>(Sales &
+                                    Marketing)</h3>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">L&T SuFin · Internship</p>
+                                <p class="text-xs text-gray-400 mt-1">Apr - Jun 2024</p>
+                            </div>
+                        </div>
+
+                        <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px] shrink-0">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/tcs.png" class="h-7 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Systems Engineer <br>(Digital Marketing)
+                                </h3>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">TCS Limited · FTE</p>
+                                <p class="text-xs text-gray-400 mt-1">Nov 2020 – Jul 2023</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px] shrink-0">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/mmtc.png" class="h-7 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Systems Division <br>(ERP & Networking)
+                                </h3>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">MMTC Limited · Internship</p>
+                                <p class="text-xs text-gray-500 mt-1">Jun - Jul 2019</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Education Row -->
+                    <div class="relative flex justify-between items-end md:overflow-x-auto md:gap-6 md:pb-4 lg:overflow-visible lg:gap-0">
+                        <!-- cards go here -->
+                        <!-- <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px]">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/pwc.png" class="h-6 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Consultant (Digital Strategy)</h3>
+                            </div>
+                            <div>
+                            <p class="text-sm text-gray-600">PwC India</p>
+                            <p class="text-xs text-gray-500 mt-1">2025 – Present</p>
+                            </div>
+                        </div> -->
+                        <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px] shrink-0">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/IIML.png" class="h-10 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Masters of Business Administration (MBA)
+                                </h3>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">IIM Lucknow · IT & Marketing</p>
+                                <p class="text-xs text-gray-500 mt-1">2023 - 2025</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px] shrink-0">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/NSUT.png" class="h-9 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Bachelor of Technology<br>(B.Tech, ECE)
+                                </h3>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">NSUT East · AIACTR</p>
+                                <p class="text-xs text-gray-500 mt-1">2016 - 2020</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px] shrink-0">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/cbse.png" class="h-11 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Higher Secondary Certificate
+                                    (XII<sup>th</sup>)</h3>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">CBSE · PCM</p>
+                                <p class="text-xs text-gray-500 mt-1">2015 – 2016</p>
+                            </div>
+                        </div>
+                        <div
+                            class="bg-white border rounded-xl px-6 py-5 shadow-sm hover:shadow-md hover:-translate-y-0.5 flex flex-col justify-between transition w-[260px] min-h-[150px] shrink-0">
+                            <div class="flex items-start gap-3 mb-3">
+                                <img src="assets/logos/cbse.png" class="h-11 w-auto shrink-0 mt-1" />
+                                <h3 class="font-semibold text-sm leading-snug">Secondary School Certificate
+                                    (X<sup>th</sup>)</h3>
+                            </div>
+                            <div>
+                                <p class="text-sm text-gray-600">CBSE · Science</p>
+                                <p class="text-xs text-gray-500 mt-1">2013 – 2014</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Mobile Timeline -->
+                <div class="md:hidden relative">
+                    <!--Timeline Line-->
+                    <div class="absolute left-1/2 top-0 h-full w-px bg-gray-300 -translate-x-1/2"></div>
+                    <!--Mobile Row Container-->
+                    <div class="space-y-10">
+                        <!-- mobile cards go here -->
+
+                        <!--PwC + MBA-->
+                        <div class="flex">
+                            <!-- Experience (left) -->
+                            <div class="w-1/2 pr-2 flex justify-end">
+
+                                <div class="bg-white border rounded-xl px-3 py-3 w-[95%]">
+                                    <div class="flex gap-2 items-center">
+
+                                        <!---Logo--->
+                                        <img src="assets/logos/pwc.png" alt="PwC" class="card-logo" />
+                                        <!-- </div> -->
+
+                                        <!--Text-->
+                                        <div>
+                                            <h3 class="card-title">Consultant</h3>
+                                            <p class="card-subtitle">Digital Strategy<br>Jun - Nov
+                                                2025</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education (right) -->
+                            <div class="w-1/2 pl-2 flex">
+                                <div class="bg-white border rounded-xl px-3 py-3 w-[95%]">
+                                    <div class="flex gap-2 items-center">
+
+                                        <!---Logo--->
+                                        <img src="assets/logos/IIML.png" alt="IIML" class="card-logo" />
+                                        <!--Text-->
+                                        <div>
+                                            <h3 class="card-title">MBA (PGP)</h3>
+                                            <p class="card-subtitle">IIM Lucknow<br>2023 - 2025
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--LnT + BTech-->
+                        <div class="flex">
+                            <!-- Experience (left) -->
+                            <div class="w-1/2 pr-2 flex justify-end">
+
+                                <div class="bg-white border rounded-xl px-3 py-3 w-[95%]">
+                                    <div class="flex gap-2 items-center">
+
+                                        <!---Logo--->
+                                        <img src="assets/logos/l&t.png" alt="LnT" class="card-logo" />
+                                        <!-- </div> -->
+
+                                        <!--Text-->
+                                        <div>
+                                            <h3 class="card-title">S&M Intern</h3>
+                                            <p class="card-subtitle">Category Mgmt<br>Apr - Jun
+                                                2024</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education (right) -->
+                            <div class="w-1/2 pl-2 flex">
+                                <div class="bg-white border rounded-xl px-3 py-3 w-[95%]">
+                                    <div class="flex gap-2 items-center">
+
+                                        <!---Logo--->
+                                        <img src="assets/logos/NSUT.png" alt="NSUT" class="card-logo" />
+                                        <!--Text-->
+                                        <div>
+                                            <h3 class="card-title">B.Tech (ECE)</h3>
+                                            <p class="card-subtitle">NSUT East<br>2016 - 2020
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--TCS + XII-->
+                        <div class="flex">
+                            <!-- Experience (left) -->
+                            <div class="w-1/2 pr-2 flex justify-end">
+
+                                <div class="bg-white border rounded-xl px-3 py-3 w-[95%]">
+                                    <div class="flex gap-2 items-center">
+
+                                        <!---Logo--->
+                                        <img src="assets/logos/tcs.png" alt="TCS" class="card-logo" />
+                                        <!-- </div> -->
+
+                                        <!--Text-->
+                                        <div>
+                                            <h3 class="card-title">System Engr.</h3>
+                                            <p class="card-subtitle">Lifesciences<br>2020 - 2023</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education (right) -->
+                            <div class="w-1/2 pl-2 flex">
+                                <div class="bg-white border rounded-xl px-3 py-3 w-[95%]">
+                                    <div class="flex gap-2 items-center">
+
+                                        <!---Logo--->
+                                        <img src="assets/logos/cbse.png" alt="CBSE" class="card-logo" />
+                                        <!--Text-->
+                                        <div>
+                                            <h3 class="card-title">HSC (XII)</h3>
+                                            <p class="card-subtitle">CBSE (PCM)<br>2015 - 2016
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--MMTC + X-->
+                        <div class="flex">
+                            <!-- Experience (left) -->
+                            <div class="w-1/2 pr-2 flex justify-end">
+
+                                <div class="bg-white border rounded-xl px-3 py-3 w-[95%]">
+                                    <div class="flex gap-2 items-center">
+
+                                        <!---Logo--->
+                                        <img src="assets/logos/mmtc.png" alt="MMTC" class="card-logo" />
+                                        <!-- </div> -->
+
+                                        <!--Text-->
+                                        <div>
+                                            <h3 class="card-title">System Div.</h3>
+                                            <p class="card-subtitle">ERP Intern<br>Jun - Jul 2019</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Education (right) -->
+                            <div class="w-1/2 pl-2 flex">
+                                <div class="bg-white border rounded-xl px-3 py-3 w-[95%]">
+                                    <div class="flex gap-2 items-center">
+
+                                        <!---Logo--->
+                                        <img src="assets/logos/cbse.png" alt="CBSE" class="card-logo" />
+                                        <!--Text-->
+                                        <div>
+                                            <h3 class="card-title">SSC (X)</h3>
+                                            <p class="card-subtitle">CBSE (Science)<br>2013 - 2014
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
     <!-- ================= SKILLS ================= -->
-    <section id="skills" class="py-20 px-6 reveal opacity-0 translate-y-6 transition-all duration-700">
+    <section id="skills" class="py-20 px-6 bg-gray-50 reveal opacity-0 translate-y-6 transition-all duration-700">
         <div class="max-w-5xl mx-auto">
             <h2 class="text-3xl font-semibold mb-10">Skills</h2>
 
@@ -274,7 +612,7 @@
     </section>
 
     <!-- ================= EXPERIENCE ================= -->
-    <section id="experience" class="py-20 px-6 bg-gray-50 reveal opacity-0 translate-y-6 transition-all duration-700">
+    <section id="experience" class="py-20 px-6 reveal opacity-0 translate-y-6 transition-all duration-700">
         <div class="max-w-5xl mx-auto">
 
             <!-- Section Heading -->
@@ -293,7 +631,7 @@
                     <!-- Timeline Icon -->
                     <div class="relative z-10">
                         <div
-                            class="w-10 h-10 rounded-full bg-white border-2 border-black flex items-center justify-center">
+                            class="w-10 h-10 rounded-full bg-white border-2 border-violet-600 flex items-center justify-center">
                             <span class="text-sm font-bold"><img src="assets/logos/ascendion.png"
                                     class="w-5 h-5" /></span>
                         </div>
@@ -571,7 +909,7 @@
                 </div>
 
                 <!-- ===== EXPERIENCE ITEM 5 ===== -->
-                <div class="relative flex gap-6 mb-12">
+                <div class="relative flex gap-6">
 
                     <!-- Timeline Icon -->
                     <div class="relative z-10">
@@ -592,7 +930,7 @@
                         </p>
 
                         <ul class="space-y-3 text-gray-700 text-sm leading-relaxed">
-                            <li class="flex gap-5">
+                            <li class="flex gap-5 text-justify">
                                 <span class="text-gray-500">››</span>
                                 <span class="leading-relaxed break-words">Enhanced <span
                                         class="text-black font-semibold">ERP workflows</span> and payroll generation
@@ -600,7 +938,7 @@
                                     developing a SQL-based search portal <span class="text-black font-semibold">boosting
                                         query efficiency by 30%</span></span>
                             </li>
-                            <li class="flex gap-5">
+                            <li class="flex gap-5 text-justify">
                                 <span class="text-gray-500">››</span>
                                 <span class="leading-relaxed break-words">Strengthened IT infrastructure by gaining
                                     hands-on expertise in <span class="text-black font-semibold">networking
@@ -615,30 +953,11 @@
                 </div>
             </div>
 
-            <!-- <div class="space-y-6">
-                <div class="border-l-4 border-black pl-4">
-                    <h3 class="font-semibold">Digital Transformation Consultant</h3>
-                    <p class="text-gray-600 text-sm">PwC</p>
-                    <p class="text-gray-700 mt-2">
-                        Led analytics-driven initiatives, built ROI simulators, and supported
-                        clients in evaluating and implementing digital platforms.
-                    </p>
-                </div>
-
-                <div class="border-l-4 border-black pl-4">
-                    <h3 class="font-semibold">Program / Brand Management</h3>
-                    <p class="text-gray-600 text-sm">TCS</p>
-                    <p class="text-gray-700 mt-2">
-                        Coordinated with 40+ brands and 80+ stakeholders to drive automation,
-                        product launches, and process improvements.
-                    </p>
-                </div>
-            </div> -->
         </div>
     </section>
 
     <!-- ================= PROJECTS ================= -->
-    <section id="projects" class="py-20 px-6 reveal opacity-0 translate-y-6 transition-all duration-700">
+    <section id="projects" class="py-20 px-6 bg-gray-50 reveal opacity-0 translate-y-6 transition-all duration-700">
 
         <div class="max-w-6xl mx-auto">
             <h2 class="text-3xl font-semibold mb-10">Projects</h2>
@@ -686,7 +1005,6 @@
         </div>
     </section>
 
-
     <!-- ================= CONTACT ================= -->
     <section id="contact" class="py-20 px-6 reveal opacity-0 translate-y-6 transition-all duration-700">
         <div class="max-w-3xl mx-auto text-center">
@@ -724,6 +1042,8 @@
             <button id="sendBtn" class="px-4 text-black font-semibold">Send</button>
         </div>
     </div>
+
+
     <script>
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
@@ -738,6 +1058,7 @@
         });
     </script>
 
+    <!--Navbar Functionality-->
     <script>
         const menuBtn = document.getElementById("menuBtn");
         const mobileMenu = document.getElementById("mobileMenu");
